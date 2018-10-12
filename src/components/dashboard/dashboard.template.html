@@ -10,20 +10,20 @@
             <div class="title">
                 Outbound Talk Time
             </div>
-            <div id="outboundTalkTime" [style.width.%]="auto" [style.height.px]="250"></div>
+            <div id="outboundTalkTime" [style.width.%]="100" [style.height.px]="250"></div>
         </div>
         <div class="col">
             <div class="title">
                 Inbound Talk Time
             </div>
-            <div id="inboundTalkTime" [style.width.%]="auto" [style.height.px]="250"></div>
+            <div id="inboundTalkTime" [style.width.%]="100" [style.height.px]="250"></div>
         </div>
     </div>
 
     <div class="flex-container row padded-aside">
         <div class="col-sm">
             <form class="example">
-                <input type='file' (change)='convertFile($event)' id='fileInput'>
+                <input type='file' (change)='convertFile()' id='fileInput'>
             </form>
         </div>
     </div>
