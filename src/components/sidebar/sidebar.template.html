@@ -1,0 +1,20 @@
+<div class="sidebar-wrapper">
+    <div class="flex-container row">
+        <ul>
+            <ng-container *ngFor="let item of menu">
+                <li *ngIf="!item.isHidden" [ngClass]="{'active' : item.isActive}" (click)="setActive(item);">
+                    <a href="javascript:void(0);">
+                        <div class="flex-container col">
+                            <div class="col center">
+                                <i class="material-icons large primary">{{item.icon}}</i>
+                            </div>
+                            <div class="col center">
+                                <label class="icon">{{item.label}}</label>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ng-container>
+        </ul>
+    </div>
+</div>

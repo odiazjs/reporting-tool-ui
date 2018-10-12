@@ -1,0 +1,47 @@
+<div class="dashboard-charts">
+    <div class="flex-container row">
+        <div class="col">
+            <div class="title">
+                Total Talk Time
+            </div>
+            <div id="totalTalkTime" [style.width.%]="100" [style.height.px]="250"></div>
+        </div>
+        <div class="col">
+            <div class="title">
+                Outbound Talk Time
+            </div>
+            <div id="outboundTalkTime" [style.width.%]="auto" [style.height.px]="250"></div>
+        </div>
+        <div class="col">
+            <div class="title">
+                Inbound Talk Time
+            </div>
+            <div id="inboundTalkTime" [style.width.%]="auto" [style.height.px]="250"></div>
+        </div>
+    </div>
+
+    <div class="flex-container row padded-aside">
+        <div class="col-sm">
+            <form class="example">
+                <input type='file' (change)='convertFile($event)' id='fileInput'>
+            </form>
+        </div>
+    </div>
+
+    <!-- CALL REPORTS DATA TABLE -->
+    <div class="flex-container row padded-aside">
+        <div class="wrapper">
+            <div class="Rtable Rtable--5cols Rtable--collapse">
+                <div class="Rtable-row Rtable-row--head">
+                    <div *ngFor="let col of tableSet.cols" class="Rtable-cell small-cell column-heading">{{col}}</div>
+                </div>
+                <div class="Rtable-row" *ngFor="let row of mapSet; let i = index;">
+                    <div class="Rtable-cell small-cell" *ngFor="let item of row | keys">
+                        <div class="Rtable-cell--heading">{{item.key}}</div>
+                        <div class="Rtable-cell--content">{{item.value | decimal}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
